@@ -1,13 +1,354 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.disabled {
+    display: none;
+}
+
+.kanban {
+    width: 1235px;
+}
+
+header {
+    height: 55px;
+    background-color: #0067A3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-title {
+    margin-top: 11px;
+    margin-left: 20px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 33px;
+    color: #FFFFFF;
+    font-style: normal;
+}
+
+.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.avatar {
+    margin-right: 20px;
+    margin-top: 6.8px;
+}
+
+.avatar:hover, .vector:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.vector{
+    margin-top: 23px;
+    margin-right: 25px;
+}
+
+.hiden-select {
+    position: absolute;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    font-style: normal;
+    margin-top: 60px;
+    margin-left: 85%;
+}
+
+.select-triangle{
+    width: 10px;
+    height: 10px;
+    background: #FFFFFF;
+    transform: rotate(45deg);
+}
+
+.select-profile, .select-log-out {
+    background-color: #FFFFFF;
+    width: 120px;
+    height: 30px;
+    padding-top: 11px;
+    padding-left: 10px;
+}
+
+.select-profile {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: relative;
+}
+
+.select-log-out {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.select-profile:hover, .select-log-out:hover {
+    background-color: #d0cdcd;
+    transition: 0.35s;
+    cursor: pointer;
+}
+
+.select-triangle {
+    margin-bottom: -5px;
+    margin-left: 90px;
+}
+
+
+
+
+
+
+
+
+footer {
+    height: 55px;
+    background-color: #0067A3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+    font-style: normal;
+}
+
+.footer-active, .footer-info, .footer-finished {
+    margin-top: 17px;
+}
+
+.footer-active {
+    margin-left: 20px;
+}
+
+.footer-info {
+    margin-right: 20px;
+}
+
+.footer-finished {
+    margin-right: 550px;
+}
+
+
+
+
+
+
+
+main {
+    height: 590px;
+    background-color: #007dc6;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container-div {
+    display: flex;
+    flex-direction: row;
+}
+
+.backlog-main, .ready-main, .finished-main, .progress-main {
+    width: 295px;
+    height: 550px;
+    border-radius: 10px;
+    background-color: #EBECF0;
+    overflow-y: scroll;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ready-main {
+    margin-left: 5%;
+    margin-right: 2%;
+}
+
+.progress-main {
+    margin-right: 5%;
+    margin-left: 2%;
+}
+
+.backlog-main::-webkit-scrollbar, .ready-main::-webkit-scrollbar, .finished-main::-webkit-scrollbar, .progress-main::-webkit-scrollbar {
+    width: 12px;
+}
+
+.backlog-main::-webkit-scrollbar-track, .ready-main::-webkit-scrollbar-track, .finished-main::-webkit-scrollbar-track, .progress-main::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.backlog-main::-webkit-scrollbar-thumb, .ready-main::-webkit-scrollbar-thumb, .finished-main::-webkit-scrollbar-thumb, .progress-main::-webkit-scrollbar-thumb {
+    background: #CBCBCB;
+    border-radius: 10px;
+}
+
+.title {
+    display: block;
+    margin: 0;
+    margin-left: 12px;
+    margin-top: 12px;
+
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    font-style: normal;
+}
+
+.backlog-task {
+    width: 246px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    margin-left: 12px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item-backlog-todo {
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    word-wrap: break-word;
+}
+
+.backlog-task:hover {
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+.backlog-remove {
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.backlog-remove:hover {
+    cursor: pointer;
+    color: #525252;
+}
+
+.added-button {
+    margin-top: 15px;
+    margin-left: 12px;
+    height: 25px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    width: 246px;
+}
+
+.add-task-input {
+    width: 240px;
+    height: 25px;
+    background-color: #FFFFFF;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-radius: 5px;
+    border-bottom: 1px solid black;
+}
+
+.add-task-button {
+    margin-top: 12px;
+    background-color: #0079BF;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    font-style: normal;
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+}
+
+.add-task-button:hover {
+    cursor: pointer;
+}
+
+.button-style {
+    border: none;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #5E6C84;
+    font-style: normal;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.button-style:hover {
+    color: #525252;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1247px) {
+    .kanban {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1179px) {
+    
+    .progress-main {
+        margin-right: 5%;
+        margin-left: 0;
+    }
+
+    .backlog-main, .ready-main, .finished-main, .progress-main {
+        height: 260px;
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    .backlog-main, .ready-main, .finished-main, .progress-main {
+        height: 260px;
+        width: 350px;
+    }
+    
+    .footer-finished {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 1101px) {
+    footer {
+        height: 80px;
+    }
+}
+
+@media screen and (max-widtg: 950px) {
+    .hiden-select {
+        margin-right: 60%;
+    }
+}
+
+@media screen and (max-width: 905px) {
+    .hiden-select {
+        margin-left: 80%;
+    }
 }
